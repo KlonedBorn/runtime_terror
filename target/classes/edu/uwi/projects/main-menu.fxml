@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="root-container" stylesheets="@css/global.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uwi.projects.MainMenuController">
+   <bottom>
+      <Label id="version" styleClass="info-label" text="Version 1.2" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="menu-container" stylesheets="@css/menu.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="144.0" prefWidth="550.0" styleClass="menu-title" text="Runtime Terror" />
+            <Button fx:id="btn_start" mnemonicParsing="false" onAction="#OnActionStart" styleClass="menu-btn" text="Start" />
+            <Button fx:id="btn_performance" mnemonicParsing="false" onAction="#OnActionPerformance" styleClass="menu-btn" text="Performance" />
+            <Button fx:id="btn_options" mnemonicParsing="false" onAction="#OnActionOptions" styleClass="menu-btn" text="Options" />
+            <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#OnActionExit" styleClass="menu-btn" text="Exit" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
