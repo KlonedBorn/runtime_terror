@@ -1,0 +1,58 @@
+.form-grid-container {
+    -fx-padding: 10px;
+    -fx-background-color: white;
+    -fx-border-radius: 5px;
+    -fx-alignment: center;
+}
+.form{
+    -fx-alignment:top-center;
+}
+.form-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-padding: 10px 0;
+}
+
+.form-field-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-padding: 5px 0;
+}
+
+.form-text-input {
+    -fx-font-size: 14px;
+    -fx-background-radius: 3px;
+    -fx-padding: 5px;
+}
+
+.form-choice-input {
+    -fx-pref-width:400px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 3px;
+    -fx-padding: 5px;
+}
+
+.form-toolbar {
+    -fx-background-color: #333;
+    -fx-spacing: 5px;
+    -fx-alignment: center;
+}
+
+.form-action-btn {
+    -fx-background-color: #333;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 3px;
+}
+
+.form-message-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-padding: 5px 0;
+}
+#settings-label{
+}
+.form-checkbox-grid{}
+.form-checkbox-input{}
