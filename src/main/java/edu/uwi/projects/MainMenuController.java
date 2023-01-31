@@ -34,10 +34,6 @@ public class MainMenuController implements Initializable {
         }
     }
 
-    @FXML private void OnActionPerformance(ActionEvent evt){
-
-    }
-
     @FXML private void OnActionOptions(ActionEvent evt){
 
     }
@@ -51,5 +47,5 @@ public class MainMenuController implements Initializable {
         System.out.println("Controller loaded");
     }
 
-    @FXML private Button btn_start , btn_performance , btn_options , btn_exit ;
+    @FXML private Button btn_start , btn_options , btn_exit ;
 }

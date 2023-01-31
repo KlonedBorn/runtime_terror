@@ -15,7 +15,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="root-container" stylesheets="@css/global.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <GridPane styleClass="form-grid-container" BorderPane.alignment="CENTER">
@@ -35,9 +34,9 @@
                <children>
                   <Label alignment="TOP_CENTER" styleClass="form-title" text="Player Editor (1)" />
                   <Label styleClass="form-field-label" text="Name" />
-                  <TextField styleClass="form-text-input" />
+                  <TextField fx:id="p1Name" styleClass="form-text-input" />
                   <Label styleClass="form-field-label" text="Theme" />
-                  <ChoiceBox prefWidth="150.0" styleClass="form-choice-input" />
+                  <ChoiceBox fx:id="p1Theme" prefWidth="150.0" styleClass="form-choice-input" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="message" />
                   <ToolBar prefHeight="40.0" prefWidth="200.0" styleClass="form-toolbar">
                      <items>
@@ -50,9 +49,9 @@
                <children>
                   <Label alignment="TOP_CENTER" styleClass="form-title" text="Player Editor (2)" />
                   <Label styleClass="form-field-label" text="Name" />
-                  <TextField styleClass="form-text-input" />
+                  <TextField fx:id="p2Name" styleClass="form-text-input" />
                   <Label styleClass="form-field-label" text="Theme" />
-                  <ChoiceBox prefWidth="150.0" styleClass="form-choice-input" />
+                  <ChoiceBox fx:id="p2Theme" prefWidth="150.0" styleClass="form-choice-input" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="message" />
                   <ToolBar prefHeight="40.0" prefWidth="200.0" styleClass="form-toolbar">
                      <items>
