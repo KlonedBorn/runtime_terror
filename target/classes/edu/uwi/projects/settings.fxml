@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -7,109 +8,73 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="root-container" stylesheets="@css/global.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <GridPane styleClass="form-grid-container" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.60003662109375" minWidth="10.0" prefWidth="442.20001220703125" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="464.1999877929688" minWidth="10.0" prefWidth="436.1999877929688" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="188.60001220703126" minHeight="0.0" prefHeight="52.6" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="511.9999877929687" minHeight="10.0" prefHeight="217.39999999999998" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="511.9999877929687" minHeight="10.0" prefHeight="242.79999999999995" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="511.9999877929687" minHeight="10.0" prefHeight="76.79998779296875" vgrow="SOMETIMES" />
-        </rowConstraints>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="edu.uwi.projects.SettingsController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="386.80000000000007" minHeight="10.0" prefHeight="244.00003356933593" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="301.1999877929687" minHeight="10.0" prefHeight="264.7999664306641" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="276.1999877929687" minHeight="10.0" prefHeight="77.20001220703125" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <stylesheets>
+      <URL value="@css/global.css" />
+      <URL value="@css/form.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="root-container" />
+      <String fx:value="form-grid-container" />
+   </styleClass>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="form">
          <children>
-            <Label id="settings-label" prefHeight="75.0" prefWidth="890.0" styleClass="menu-title" text="Game Settings" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="245.0" prefWidth="442.0" styleClass="form" stylesheets="@css/form.css" GridPane.rowIndex="1">
-               <children>
-                  <Label alignment="TOP_CENTER" styleClass="form-title" text="Player Editor (1)" />
-                  <Label styleClass="form-field-label" text="Name" />
-                  <TextField fx:id="p1Name" styleClass="form-text-input" />
-                  <Label styleClass="form-field-label" text="Theme" />
-                  <ChoiceBox fx:id="p1Theme" prefWidth="150.0" styleClass="form-choice-input" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="message" />
-                  <ToolBar prefHeight="40.0" prefWidth="200.0" styleClass="form-toolbar">
-                     <items>
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="62.0" styleClass="form-action-btn" text="Clear" />
-                     </items>
-                  </ToolBar>
-               </children>
-            </VBox>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="246.0" prefWidth="442.0" styleClass="form" stylesheets="@css/form.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <Label alignment="TOP_CENTER" styleClass="form-title" text="Player Editor (2)" />
-                  <Label styleClass="form-field-label" text="Name" />
-                  <TextField fx:id="p2Name" styleClass="form-text-input" />
-                  <Label styleClass="form-field-label" text="Theme" />
-                  <ChoiceBox fx:id="p2Theme" prefWidth="150.0" styleClass="form-choice-input" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="message" />
-                  <ToolBar prefHeight="40.0" prefWidth="200.0" styleClass="form-toolbar">
-                     <items>
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="62.0" styleClass="form-action-btn" text="Clear" />
-                     </items>
-                  </ToolBar>
-               </children>
-            </VBox>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="214.0" prefWidth="435.0" styleClass="form" stylesheets="@css/form.css" GridPane.rowIndex="2">
-               <children>
-                  <Label styleClass="form-title" text="Topic Selector" />
-                  <GridPane styleClass="form-checkbox-grid">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <CheckBox mnemonicParsing="false" styleClass="form-checkbox-input" text="Data Structure" />
-                        <CheckBox mnemonicParsing="false" styleClass="form-checkbox-input" text="Obj-Oriented Programming" GridPane.rowIndex="1" />
-                        <CheckBox mnemonicParsing="false" styleClass="form-checkbox-input" text="Algorithm Analysis" GridPane.columnIndex="1" />
-                        <CheckBox mnemonicParsing="false" styleClass="form-checkbox-input" text="Abstraction" GridPane.rowIndex="2" />
-                     </children>
-                  </GridPane>
-                  <ToolBar prefHeight="40.0" prefWidth="200.0" styleClass="form-toolbar">
-                     <items>
-                        <Button mnemonicParsing="false" styleClass="form-action-btn" text="All" />
-                        <Button mnemonicParsing="false" styleClass="form-action-btn" text="None" />
-                        <Button mnemonicParsing="false" styleClass="form-action-btn" text="Random" />
-                     </items>
-                  </ToolBar>
-               </children>
-            </VBox>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="435.0" styleClass="form" stylesheets="@css/form.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <children>
-                  <Label prefHeight="60.0" prefWidth="320.0" styleClass="form-title" text="Select Difficulty (WIP)" />
-                  <VBox prefHeight="200.0" prefWidth="100.0" styleClass="form-radio-container">
-                     <children>
-                        <RadioButton mnemonicParsing="false" styleClass="form-radio-input" text="Easy" />
-                        <RadioButton mnemonicParsing="false" styleClass="form-radio-input" text="Medium" />
-                        <RadioButton mnemonicParsing="false" styleClass="form-radio-input" text="Advanced" />
-                        <RadioButton mnemonicParsing="false" styleClass="form-radio-input" text="Hard" />
-                        <RadioButton mnemonicParsing="false" styleClass="form-radio-input" text="Hard" />
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="902.0" styleClass="menu-btn" text="Start Game" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" styleClass="form-title" text="Player Editor (1)" textAlignment="CENTER" />
+            <Label text="Name" />
+            <TextField fx:id="tf_p1Name" styleClass="form-text-input" text="Joe" />
+            <Label text="Theme" />
+            <ChoiceBox fx:id="cb_p1Theme" prefHeight="39.0" prefWidth="439.0" styleClass="form-choice-input" />
+            <Text fx:id="tx_p1Message" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="&lt;message&gt;" visible="false" />
          </children>
-         <stylesheets>
-            <URL value="@css/menu.css" />
-            <URL value="@css/global.css" />
-            <URL value="@css/form.css" />
-         </stylesheets>
-      </GridPane>
-   </left>
-</BorderPane>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="form" GridPane.columnIndex="1">
+         <children>
+            <Label alignment="CENTER" styleClass="form-title" text="Player Editor (2)" textAlignment="CENTER" />
+            <Label text="Name" />
+            <TextField fx:id="tf_p2Name" styleClass="form-text-input" text="Bob" />
+            <Label text="Theme" />
+            <ChoiceBox fx:id="cb_p2Theme" prefWidth="150.0" styleClass="form-choice-input" />
+            <Text fx:id="tx_p2Message" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="&lt;message&gt;" visible="false" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="form" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+         <children>
+            <Label alignment="CENTER" styleClass="form-title" text="Topic Selector" textAlignment="CENTER" />
+            <CheckBox fx:id="cx_dst" mnemonicParsing="false" selected="true" styleClass="form-checkbox-input" text="Data Structure Theory" />
+            <CheckBox fx:id="cx_oop" mnemonicParsing="false" selected="true" styleClass="form-checkbox-input" text="Object-Oriented Programming" />
+            <CheckBox fx:id="cx_abs" mnemonicParsing="false" selected="true" styleClass="form-checkbox-input" text="Abstraction" />
+            <CheckBox fx:id="cx_aat" mnemonicParsing="false" selected="true" styleClass="form-checkbox-input" text="Alogirthm Analysis Theorem" />
+            <Text fx:id="tx_topicMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="&lt;message&gt;" visible="false" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="form" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label alignment="CENTER" styleClass="form-title" text="Question Difficulty" textAlignment="CENTER" />
+            <RadioButton fx:id="rb_easy" mnemonicParsing="false" styleClass="form-radio-input" text="Easy" />
+            <RadioButton fx:id="rb_medium" mnemonicParsing="false" styleClass="form-radio-input" text="Medium" />
+            <RadioButton fx:id="rb_advanced" mnemonicParsing="false" styleClass="form-radio-input" text="Advanced" />
+            <RadioButton fx:id="rb_hard" mnemonicParsing="false" styleClass="form-radio-input" text="Hard" />
+            <RadioButton fx:id="rb_any" mnemonicParsing="false" selected="true" styleClass="form-radio-input" text="Any" />
+            <Text fx:id="tx_difficultyMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="&lt;message&gt;" visible="false" />
+         </children>
+      </VBox>
+      <Button fx:id="bt_back" mnemonicParsing="false" onAction="#OnClickedBack" styleClass="menu-btn" stylesheets="@css/menu.css" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Button fx:id="bt_continue" mnemonicParsing="false" onAction="#OnClickedConfirm" styleClass="menu-btn" stylesheets="@css/menu.css" text="Continue" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+   </children>
+</GridPane>

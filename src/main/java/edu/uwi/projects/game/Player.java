@@ -46,6 +46,15 @@ public class Player {
     public void setScore(int score) {
         this.score = score;
     }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Player [name=" + name + ", theme=" + theme + ", score=" + score + "]";
+    }
+
+
 
     private String name;
     private Theme theme;

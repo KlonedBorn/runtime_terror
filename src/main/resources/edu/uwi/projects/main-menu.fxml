@@ -14,7 +14,6 @@
          <children>
             <Label prefHeight="144.0" prefWidth="550.0" styleClass="menu-title" text="Runtime Terror" />
             <Button fx:id="btn_start" mnemonicParsing="false" onAction="#OnActionStart" styleClass="menu-btn" text="Start" />
-            <Button fx:id="btn_options" mnemonicParsing="false" onAction="#OnActionOptions" styleClass="menu-btn" text="Options" />
             <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#OnActionExit" styleClass="menu-btn" text="Exit" />
          </children>
       </VBox>

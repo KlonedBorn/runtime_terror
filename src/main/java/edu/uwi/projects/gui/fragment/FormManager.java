@@ -16,6 +16,7 @@ package edu.uwi.projects.gui.fragment;
 
 import java.util.List;
 
+import edu.uwi.projects.game.Player;
 import edu.uwi.projects.game.Theme;
 import javafx.animation.TranslateTransition;
 import javafx.scene.Node;
@@ -28,11 +29,9 @@ public class FormManager {
     private TextField nameField;
     private ChoiceBox<Theme> themeBox;
     private Text messageText;
-    private Button confirmButton;
     private boolean isValid;
-    private Button clearButton;
 
-    public FormManager(TextField nameField, ChoiceBox<Theme> themeBox, Text messageText, Button confirmButton,Button clearButton) {
+    public FormManager(TextField nameField, ChoiceBox<Theme> themeBox, Text messageText) {
         if(FormManager.themeManager == null) {
             FormManager.themeManager = new ChoiceBoxGroup<>(List.of(Theme.values()));
         }
@@ -40,37 +39,25 @@ public class FormManager {
         this.themeBox = themeBox;
         this.themeBox.setStyle("-fx-text-fill: white;");
         this.messageText = messageText;
-        this.confirmButton = confirmButton;
-        this.clearButton = clearButton;
         this.isValid = false;
-        
-        // Add listener to confirm button to validate input and display message
-        this.confirmButton.setOnAction(e -> { 
-            if (validateName()) {
-                messageText.setText("Success!");
-                messageText.setFill(Color.GREEN);
-                messageText.setVisible(true);
-                this.isValid = true;
-            } else {
-                this.onErrorShake(Duration.millis(50), this.nameField);
-                messageText.setFill(Color.RED);
-                messageText.setText("Error: Name must be at least 3 characters and contain only letters.");
-                messageText.setVisible(true);
-                this.isValid = false;
-            }
-        });
-
-        this.clearButton.setOnAction(evt->clearFields());
 
         this.themeBox.addEventHandler(ChoiceBoxEvent.SUCCESS, evt -> {
-            ChoiceBox<?> target = (ChoiceBox<?>)evt.getTarget();
+            Object tar = evt.getTarget();
+            ChoiceBox<?> target=null;
+            if(tar instanceof ChoiceBox<?>){
+                target = (ChoiceBox<?>)tar;
+            }
             Theme selection = (Theme)evt.getSelection();
             messageText.setVisible(false);
             target.setStyle("-fx-background-color: " + selection.getColor().toString().replace("0x", "#") + ";");
         });
 
         this.themeBox.addEventHandler(ChoiceBoxEvent.FAIL, evt -> {
-            ChoiceBox<?> target = (ChoiceBox<?>)evt.getTarget();
+            Object tar = evt.getTarget();
+            ChoiceBox<?> target=null;
+            if(tar instanceof ChoiceBox<?>){
+                target = (ChoiceBox<?>)tar;
+            }
             onErrorShake(Duration.millis(50),target);
             messageText.setFill(Color.RED);
             target.setStyle("-fx-background-color: #FFF;");
@@ -82,8 +69,26 @@ public class FormManager {
         this.themeBox.getItems().addAll(List.of(Theme.values()));
         FormManager.themeManager.addChoiceBox(this.themeBox);
     }
-
-    private void clearFields() {
+    public boolean confirmFields() { 
+        if (validateName()) {
+            messageText.setText("Success!");
+            messageText.setFill(Color.GREEN);
+            messageText.setVisible(true);
+            this.isValid = true;
+        } else {
+            this.onErrorShake(Duration.millis(50), this.nameField);
+            messageText.setFill(Color.RED);
+            messageText.setText("Error: Name must be at least 3 characters and contain only letters.");
+            messageText.setVisible(true);
+            this.isValid = false;
+        }
+        return this.isValid;
+    }
+    public void configPlayer(Player pl){
+        pl.setName(this.nameField.getText());
+        pl.setTheme(this.themeBox.getValue());
+    }
+    public void clearFields() {
         this.nameField.clear();
         this.themeBox.getSelectionModel().clearSelection();
         messageText.setText("");
@@ -116,6 +121,5 @@ public class FormManager {
     public TextField getNameField() { return nameField; }
     public ChoiceBox<Theme> getThemeBox() { return themeBox; }
     public Text getMessageText() { return messageText; }
-    public Button getConfirmButton() { return confirmButton; }
     private static ChoiceBoxGroup<Theme> themeManager;
 }

@@ -14,67 +14,54 @@
 
 package edu.uwi.projects.gui.fragment;
 
-import javafx.scene.control.CheckBox;
-import javafx.scene.layout.Pane;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
+import edu.uwi.projects.game.Topic;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.CheckBox;
 
 public class CheckBoxGroup {
-    private List<CheckBox> checkBoxes;
-    private Pane parentPane;
-
+    private ObservableList<CheckBox> checkBoxes;
+    private CheckBox lastChecked;
+    
     public CheckBoxGroup() {
-        checkBoxes = new ArrayList<>();
+        checkBoxes = FXCollections.observableArrayList();
+        lastChecked = null;
     }
-
-    public CheckBoxGroup(Pane parentPane) {
-        this();
-        this.parentPane = parentPane;
-        findCheckBoxes();
-    }
-
+    
     public void addCheckBox(CheckBox checkBox) {
         checkBoxes.add(checkBox);
-    }
-
-    public void findCheckBoxes() {
-        if (parentPane == null) {
-            throw new IllegalStateException("Parent Pane is not set");
-        }
-        for (var node : parentPane.getChildren()) {
-            if (node instanceof CheckBox) {
-                checkBoxes.add((CheckBox) node);
+        
+        checkBox.setOnAction(event -> {
+            if (!checkBox.isSelected() && checkBoxes.stream().noneMatch(CheckBox::isSelected)) {
+                lastChecked.setSelected(true);
+            } else {
+                lastChecked = checkBox;
             }
-        }
+        });
     }
-
-    public List<String> getSelectedCheckBoxText() {
-        List<String> selectedCheckBoxText = new ArrayList<>();
+    public List<String> getSelectedCheckBoxTexts() {
+        List<String> selectedTexts = new ArrayList<>();
         for (CheckBox checkBox : checkBoxes) {
             if (checkBox.isSelected()) {
-                selectedCheckBoxText.add(checkBox.getText());
+                selectedTexts.add(checkBox.getText());
             }
         }
-        return selectedCheckBoxText;
+        return selectedTexts;
     }
-
-    public void selectAll() {
-        for (CheckBox checkBox : checkBoxes)
-            checkBox.setSelected(true);
-        
-    }
-
-    public void unselectAll() {
-        for (CheckBox checkBox : checkBoxes) 
-            checkBox.setSelected(false);
-        
-    }
-
-    public void randomSelect() {
-        unselectAll();
-        Random random = new Random();
-        for (CheckBox checkBox : checkBoxes) 
-            checkBox.setSelected(random.nextBoolean());
+    
+    public List<Topic> getSelectedTopics() {
+        List<Topic> selectedTopics = new ArrayList<>();
+        for (String checkBoxText : getSelectedCheckBoxTexts()) {
+            for (Topic topic : Topic.values()) {
+                if (topic.getFullName().equals(checkBoxText)) {
+                    selectedTopics.add(topic);
+                    break;
+                }
+            }
+        }
+        return selectedTopics;
     }
 }

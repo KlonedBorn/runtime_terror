@@ -5,12 +5,12 @@
     -fx-alignment: center;
 }
 .form{
-    -fx-alignment:top-center;
+
 }
 .form-title {
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333;
+    -fx-text-fill: red;
     -fx-padding: 10px 0;
 }
 
@@ -51,8 +51,11 @@
     -fx-font-size: 14px;
     -fx-text-fill: #333;
     -fx-padding: 5px 0;
+    -fx-visibility: hidden;
+    -fx-managed: false;
 }
 #settings-label{
 }
 .form-checkbox-grid{}
 .form-checkbox-input{}
+.form-radio-input{}
