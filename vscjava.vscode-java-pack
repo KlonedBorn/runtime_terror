@@ -12,21 +12,3 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package edu.uwi.projects.game;
-
-public enum Topic {
-    DST("Data Structure Theory"),
-    OOP("Object-Oriented Programming"),
-    ABS("Abstraction"),
-    AAT("Algorithm Analysis Theorem");
-    
-    private final String fullName;
-    
-    Topic(String fullName) {
-        this.fullName = fullName;
-    }
-    
-    public String getFullName() {
-        return fullName;
-    }
-}

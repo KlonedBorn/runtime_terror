@@ -31,7 +31,7 @@ def generate_inject_file(values):
             f.write('@FXML private <type> %s;\n' % value)
 
 if __name__ == '__main__':
-    directory_path = '.'
+    directory_path = 'src\\main\\resources\\edu\\uwi\\projects'
     values = []
     for filename in os.listdir(directory_path):
         if filename.endswith('.fxml'):

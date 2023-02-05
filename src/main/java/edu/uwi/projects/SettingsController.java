@@ -41,11 +41,18 @@ import javafx.scene.text.Text;
 public class SettingsController implements Initializable{
 
     @FXML private void OnClickedConfirm(){
-        if(this.p1FormManager.confirmFields()) this.p1FormManager.configPlayer(plSuite[0]);
-        if(this.p2FormManager.confirmFields()) this.p2FormManager.configPlayer(plSuite[1]);
-        this.tpSuite = this.topicManager.getSelectedTopics();
-        this.diff = diffManager.getSelectedRadioButtonValueAsDifficulty();
-        System.out.println(new QuizMatch(plSuite, tpSuite, diff));
+        if(this.p1FormManager.confirmFields() && this.p2FormManager.confirmFields()) {
+            this.p1FormManager.configPlayer(GameplayController.plSuite[0]);
+            this.p2FormManager.configPlayer(GameplayController.plSuite[1]);
+            GameplayController.tpSuite = this.topicManager.getSelectedTopics();
+            GameplayController.diff = diffManager.getSelectedRadioButtonValueAsDifficulty();
+            try {
+                Launcher.setRoot("gameplay");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println(new QuizMatch(GameplayController.plSuite, GameplayController.tpSuite, GameplayController.diff));
+        }
     }
 
     @FXML private void OnClickedBack(){
@@ -57,12 +64,6 @@ public class SettingsController implements Initializable{
     }
 
     @Override public void initialize(URL location, ResourceBundle resources) {
-        plSuite = new Player[]{
-            new Player(),
-            new Player()
-        };
-        tpSuite = new ArrayList<>();
-        diff = Difficulty.ANY;
         this.p1FormManager = new FormManager(tf_p1Name, cb_p1Theme, tx_p1Message);
         this.p2FormManager = new FormManager(tf_p2Name, cb_p2Theme, tx_p2Message);
         this.topicManager = new CheckBoxGroup();
@@ -78,9 +79,6 @@ public class SettingsController implements Initializable{
         this.diffManager.addButton(rb_any);
     }
 
-    private Player plSuite[];
-    private List<Topic> tpSuite;
-    private Difficulty diff;
     private CheckBoxGroup topicManager;
     private RadioButtonGroup diffManager;
     private FormManager p1FormManager , p2FormManager;

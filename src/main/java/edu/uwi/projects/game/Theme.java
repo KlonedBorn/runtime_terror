@@ -58,7 +58,16 @@ public enum Theme {
         return list;
     }
 
-    @Override public String toString(){
+    @Override
+    public String toString(){
         return this.name;
+    }
+
+    public String toHex() {
+        String hex = String.format("#%02X%02X%02X",
+        (int)(color.getRed() * 255),
+        (int)(color.getGreen() * 255),
+        (int)(color.getBlue() * 255));
+        return hex;
     }
 }

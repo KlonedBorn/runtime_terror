@@ -1,15 +1,19 @@
-# Project Title
-A brief description of your project goes here.
+# Runtime Terror
+Runtime Terror is a two-player, turn based quiz game where players must answer the most questions out of 6. The questions are taken from the following topics; Data Structures, Object-Oriented Programming, Abstraction & Algorithm Anaylsis.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ## Prerequisites
-What things you need to install the software and how to install them.
+- [Java 17 JDK](https://docs.oracle.com/en/java/javase/18/install/installation-jdk-microsoft-windows-platforms.html#GUID-DAF345BA-B3E7-4CF2-B87A-B6662D691840)
+- [JavaFX Scene Builder 18.0.0](https://gluonhq.com/products/scene-builder/)
+- [Maven 3.8.6](https://maven.apache.org/install.html)
+- [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) 
 
 ## Installing
-Step by step instructions to get the development environment running.
-
+1. Ensure all preequisites are installed and configured on device.
+2. Clone repository to local device.
+3. Go [Launcher](src\main\java\edu\uwi\projects\Launcher.java) and start 
 ## Usage
 Examples of how to use the software.
 

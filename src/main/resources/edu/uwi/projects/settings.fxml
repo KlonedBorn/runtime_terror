@@ -53,7 +53,7 @@
             <Text fx:id="tx_p2Message" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="&lt;message&gt;" visible="false" />
          </children>
       </VBox>
-      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="form" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+      <VBox fx:id="vb_topic" prefHeight="200.0" prefWidth="100.0" styleClass="form" GridPane.halignment="LEFT" GridPane.rowIndex="1">
          <children>
             <Label alignment="CENTER" styleClass="form-title" text="Topic Selector" textAlignment="CENTER" />
             <CheckBox fx:id="cx_dst" mnemonicParsing="false" selected="true" styleClass="form-checkbox-input" text="Data Structure Theory" />
@@ -63,7 +63,7 @@
             <Text fx:id="tx_topicMessage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="form-message-label" text="&lt;message&gt;" visible="false" />
          </children>
       </VBox>
-      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="form" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <VBox fx:id="vb_difficulty" prefHeight="200.0" prefWidth="100.0" styleClass="form" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
             <Label alignment="CENTER" styleClass="form-title" text="Question Difficulty" textAlignment="CENTER" />
             <RadioButton fx:id="rb_easy" mnemonicParsing="false" styleClass="form-radio-input" text="Easy" />

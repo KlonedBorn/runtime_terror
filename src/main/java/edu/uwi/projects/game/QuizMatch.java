@@ -32,6 +32,5 @@ public class QuizMatch {
     public String toString() {
         return "QuizMatch [\nplayers=" + Arrays.toString(players) + ",\ntopics=" + topics + ",\ndifficulty=" + difficulty
                 + "\n]";
-    }
-    
+    } 
 }
